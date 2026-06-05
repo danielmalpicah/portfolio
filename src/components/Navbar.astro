@@ -1,0 +1,146 @@
+---
+import type { Lang } from '../i18n/ui';
+import { ui } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].nav;
+const altLang: Lang = lang === 'es' ? 'en' : 'es';
+const altUrl = `/${altLang}/`;
+---
+
+<nav>
+  <div class="nav-inner">
+    <a href={`/${lang}/`} class="logo">DM<span class="dot">.</span></a>
+    <div class="divider"></div>
+    <ul class="nav-links">
+      <li><a href="#about">{t.about}</a></li>
+      <li><a href="#services">{t.services}</a></li>
+      <li><a href="#projects">{t.projects}</a></li>
+      <li><a href="#contact">{t.contact}</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href={altUrl} class="lang-switch">{altLang.toUpperCase()}</a>
+      <a href="https://github.com/danielmalpicah" target="_blank" class="nav-cta">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    animation: fadeIn 0.6s ease 0.5s both;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.5rem;
+    background: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .logo {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    padding: 0.375rem 0.875rem;
+  }
+
+  .dot {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .divider {
+    width: 1px;
+    height: 16px;
+    background: var(--border);
+    margin: 0 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0;
+  }
+
+  .nav-links a {
+    display: block;
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-left: 0.25rem;
+  }
+
+  .lang-switch {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    padding: 0.375rem 0.625rem;
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+
+  .lang-switch:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-cta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    color: var(--text-primary);
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: rgba(124, 58, 237, 0.25);
+    border-color: rgba(124, 58, 237, 0.6);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

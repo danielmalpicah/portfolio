@@ -1,0 +1,45 @@
+---
+import type { ui } from '../i18n/ui';
+
+interface Props {
+  t: typeof ui['es']['footer'];
+}
+
+const { t } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="container">
+    <p class="footer-text">
+      © {year} Daniel Malpica · {t.built_with} <a href="https://astro.build" target="_blank">Astro</a> {t.and_ai}
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .footer-text a {
+    color: var(--accent-cyan);
+    transition: opacity 0.2s;
+  }
+
+  .footer-text a:hover {
+    opacity: 0.8;
+  }
+</style>

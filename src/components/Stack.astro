@@ -1,0 +1,109 @@
+---
+const stack = [
+  { name: "HTML5", color: "#e34f26" },
+  { name: "CSS3", color: "#1572b6" },
+  { name: "JavaScript", color: "#f7df1e" },
+  { name: "React", color: "#61dafb" },
+  { name: "Python", color: "#3776ab" },
+  { name: "Astro", color: "#ff5d01" },
+  { name: "Git", color: "#f05032" },
+  { name: "AI Tools", color: "#7c3aed" },
+];
+---
+
+<section id="stack" class="stack">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Tech Stack</span>
+      <h2>Tools I <span class="gradient-text">work with</span></h2>
+      <p>Technologies I'm learning and applying to build real projects.</p>
+    </div>
+    <div class="stack-grid">
+      {stack.map((tech) => (
+        <div class="tech-card">
+          <div class="tech-dot" style={`background: ${tech.color}; box-shadow: 0 0 10px ${tech.color}40`}></div>
+          <span>{tech.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stack {
+    padding: 8rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-cyan);
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+  }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .tech-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    cursor: default;
+  }
+
+  .tech-card:hover {
+    background: var(--surface-hover);
+    border-color: rgba(124, 58, 237, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .tech-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+</style>
