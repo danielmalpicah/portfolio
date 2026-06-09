@@ -69,7 +69,7 @@ export const ui = {
           description: 'Este portafolio — construido con Astro y asistencia de IA. Tema oscuro, glassmorphism y animaciones modernas.',
           tags: ['Astro', 'CSS', 'IA'],
           status: 'live' as const,
-          link: '/es/',
+          link: '/',
         },
         {
           title: 'Próximamente',

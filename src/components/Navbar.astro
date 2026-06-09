@@ -9,12 +9,12 @@ interface Props {
 const { lang } = Astro.props;
 const t = ui[lang].nav;
 const altLang: Lang = lang === 'es' ? 'en' : 'es';
-const altUrl = `/${altLang}/`;
+const altUrl = altLang === 'es' ? '/' : '/en/';
 ---
 
 <nav>
   <div class="nav-inner">
-    <a href={`/${lang}/`} class="logo">DM<span class="dot">.</span></a>
+    <a href={lang === 'es' ? '/' : '/en/'} class="logo">DM<span class="dot">.</span></a>
     <div class="divider"></div>
     <ul class="nav-links">
       <li><a href="#about">{t.about}</a></li>
