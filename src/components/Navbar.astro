@@ -10,12 +10,13 @@ const { lang } = Astro.props;
 const t = ui[lang].nav;
 const altLang: Lang = lang === 'es' ? 'en' : 'es';
 const altUrl = altLang === 'es' ? '/' : '/en/';
+const homeUrl = lang === 'es' ? '/' : '/en/';
 ---
 
-<nav>
+<nav aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>
   <div class="nav-inner">
-    <a href={lang === 'es' ? '/' : '/en/'} class="logo">DM<span class="dot">.</span></a>
-    <div class="divider"></div>
+    <a href={homeUrl} class="logo">DM<span class="dot">.</span></a>
+    <div class="divider" aria-hidden="true"></div>
     <ul class="nav-links">
       <li><a href="#about">{t.about}</a></li>
       <li><a href="#services">{t.services}</a></li>
@@ -23,8 +24,8 @@ const altUrl = altLang === 'es' ? '/' : '/en/';
       <li><a href="#contact">{t.contact}</a></li>
     </ul>
     <div class="nav-actions">
-      <a href={altUrl} class="lang-switch">{altLang.toUpperCase()}</a>
-      <a href="https://github.com/danielmalpicah" target="_blank" class="nav-cta">GitHub</a>
+      <a href={altUrl} class="lang-switch" hreflang={altLang} aria-label={altLang === 'es' ? 'Versión en español' : 'English version'}>{altLang.toUpperCase()}</a>
+      <a href="https://github.com/danielmalpicah" target="_blank" rel="noopener noreferrer" class="nav-cta">GitHub</a>
     </div>
   </div>
 </nav>
@@ -138,8 +139,29 @@ const altUrl = altLang === 'es' ? '/' : '/en/';
     to { opacity: 1; transform: translateX(-50%) translateY(0); }
   }
 
-  @media (max-width: 768px) {
-    .nav-links {
+  /* En móvil se oculta el CTA de GitHub (también está en Hero y Contact)
+     para que los links de navegación sigan siendo accesibles */
+  @media (max-width: 640px) {
+    nav {
+      top: 0.75rem;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    .logo {
+      padding: 0.375rem 0.625rem;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      padding: 0.375rem 0.5rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .divider {
       display: none;
     }
   }

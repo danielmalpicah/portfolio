@@ -1,7 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
+  site: 'https://danielmalpica.dev',
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
@@ -9,4 +11,15 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'es',
+        locales: {
+          es: 'es',
+          en: 'en',
+        },
+      },
+    }),
+  ],
 });

@@ -12,12 +12,12 @@ import { ui } from '../../i18n/ui';
 const t = ui.en;
 ---
 
-<Layout title="Daniel Malpica — AI-Powered Developer">
+<Layout title={t.meta.title} description={t.meta.description} lang="en">
   <Navbar lang="en" />
   <main>
     <Hero t={t.hero} />
     <About t={t.about} />
-    <Stack />
+    <Stack t={t.services} />
     <Projects t={t.projects} />
     <Contact t={t.contact} />
   </main>

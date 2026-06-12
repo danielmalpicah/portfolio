@@ -7,6 +7,10 @@ export const defaultLang = 'es';
 
 export const ui = {
   es: {
+    meta: {
+      title: 'Daniel Malpica — Desarrollo Web & Automatizaciones',
+      description: 'Sitios web modernos, automatizaciones con n8n y mantenimiento web. Desarrollo con metodología AI-first para negocios que quieren crecer.',
+    },
     nav: {
       about: 'Acerca de',
       services: 'Servicios',
@@ -102,6 +106,10 @@ export const ui = {
   },
 
   en: {
+    meta: {
+      title: 'Daniel Malpica — AI-Powered Developer',
+      description: 'AI-powered web developer building modern, fast web experiences with Astro, React, and Python.',
+    },
     nav: {
       about: 'About',
       services: 'Stack',
@@ -134,8 +142,7 @@ export const ui = {
       label: 'Tech Stack',
       heading: 'Tools I',
       heading_accent: 'work with',
-      subtitle: 'Technologies I\'m learning and applying to build real projects.',
-      items: [],
+      subtitle: "Technologies I'm learning and applying to build real projects.",
     },
     projects: {
       label: 'Work',
