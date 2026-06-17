@@ -76,11 +76,11 @@ export const ui = {
           link: '/',
         },
         {
-          title: 'Próximamente',
-          description: 'Próximo proyecto en desarrollo. Algo interesante con React e integración de IA.',
-          tags: ['React', 'IA', 'TBD'],
-          status: 'building' as const,
-          link: '',
+          title: 'Dani Coding',
+          description: 'Sitio para taller de programación automotriz nivel concesionario. Servicios VAG con ODIS y BMW con ISTA/E-SYS. Contacto directo por WhatsApp.',
+          tags: ['Astro', 'CSS', 'WhatsApp'],
+          status: 'live' as const,
+          link: 'https://www.dani-coding.com/',
         },
         {
           title: 'Próximamente',
@@ -161,11 +161,11 @@ export const ui = {
           link: '/en/',
         },
         {
-          title: 'Coming Soon',
-          description: 'Next project in development. Something interesting built with React and AI integration.',
-          tags: ['React', 'AI', 'TBD'],
-          status: 'building' as const,
-          link: '',
+          title: 'Dani Coding',
+          description: 'Website for a dealership-level automotive programming shop. VAG group (ODIS) and BMW (ISTA/E-SYS) services. WhatsApp contact integration.',
+          tags: ['Astro', 'CSS', 'WhatsApp'],
+          status: 'live' as const,
+          link: 'https://www.dani-coding.com/',
         },
         {
           title: 'Coming Soon',
