@@ -10,7 +10,7 @@ const { t } = Astro.props;
 
 <section id="about" class="about">
   <div class="container">
-    <div class="about-grid">
+    <div class="about-grid" data-animate-stagger>
       <div class="about-text">
         <span class="section-label">{t.label}</span>
         <h2>{t.heading}<br /><span class="gradient-text">{t.heading_accent}</span></h2>
@@ -33,7 +33,13 @@ const { t } = Astro.props;
       </div>
       <div class="about-visual">
         <div class="avatar-container">
-          <div class="avatar"><span>DM</span></div>
+          <img
+            src="/avatar.PNG"
+            alt="Daniel Malpica"
+            class="avatar-photo"
+            width="200"
+            height="200"
+          />
           <div class="avatar-ring"></div>
           <div class="avatar-glow"></div>
         </div>
@@ -110,27 +116,16 @@ const { t } = Astro.props;
     justify-content: center;
   }
 
-  .avatar {
+  .avatar-photo {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    object-fit: cover;
+    object-position: center top;
     border: 2px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     z-index: 2;
-    font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: -0.05em;
-  }
-
-  .avatar span {
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    display: block;
   }
 
   .avatar-ring {

@@ -10,12 +10,12 @@ const { t } = Astro.props;
 
 <section id="process" class="process">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" data-animate>
       <span class="section-label">{t.label}</span>
       <h2>{t.heading} <span class="gradient-text">{t.heading_accent}</span></h2>
       <p>{t.subtitle}</p>
     </div>
-    <div class="steps">
+    <div class="steps" data-animate-stagger>
       {t.steps.map((step) => (
         <div class="step">
           <div class="step-number">{step.number}</div>
@@ -37,21 +37,8 @@ const { t } = Astro.props;
 
   .steps {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    position: relative;
-  }
-
-  /* Connecting line between steps on desktop */
-  .steps::before {
-    content: '';
-    position: absolute;
-    top: 2.25rem;
-    left: calc(12.5% + 1.5rem);
-    right: calc(12.5% + 1.5rem);
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border-accent), var(--border-accent), transparent);
-    pointer-events: none;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
   }
 
   .step {
@@ -96,17 +83,19 @@ const { t } = Astro.props;
     line-height: 1.7;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1100px) {
     .steps {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .steps::before {
-      display: none;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  @media (max-width: 540px) {
+  @media (max-width: 680px) {
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 420px) {
     .steps {
       grid-template-columns: 1fr;
     }

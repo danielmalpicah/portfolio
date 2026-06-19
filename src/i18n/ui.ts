@@ -88,6 +88,11 @@ export const ui = {
           title: 'Entrega',
           description: 'Sitio en producción. Te entrego accesos y una guía rápida para que tengas el control total.',
         },
+        {
+          number: '05',
+          title: 'Soporte',
+          description: 'Seguimos en contacto. Ajustes, actualizaciones y mantenimiento para que tu sitio nunca se quede atrás.',
+        },
       ],
     },
     projects: {
@@ -193,6 +198,11 @@ export const ui = {
           number: '04',
           title: 'Delivery',
           description: "Site goes live. I hand over access and walk you through everything so you're in full control.",
+        },
+        {
+          number: '05',
+          title: 'Support',
+          description: 'We stay in touch after launch. Adjustments, updates, and maintenance so your site never falls behind.',
         },
       ],
     },
