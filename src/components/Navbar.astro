@@ -1,6 +1,7 @@
 ---
 import type { Lang } from '../i18n/ui';
 import { ui } from '../i18n/ui';
+import { SITE } from '../consts';
 
 interface Props {
   lang: Lang;
@@ -25,7 +26,7 @@ const homeUrl = lang === 'es' ? '/' : '/en/';
     </ul>
     <div class="nav-actions">
       <a href={altUrl} class="lang-switch" hreflang={altLang} aria-label={altLang === 'es' ? 'Versión en español' : 'English version'}>{altLang.toUpperCase()}</a>
-      <a href="https://github.com/danielmalpicah" target="_blank" rel="noopener noreferrer" class="nav-cta">GitHub</a>
+      <a href={SITE.github} target="_blank" rel="noopener noreferrer" class="nav-cta">GitHub</a>
     </div>
   </div>
 </nav>

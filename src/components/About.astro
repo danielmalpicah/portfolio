@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import avatar from '../assets/avatar.png';
 import type { ui } from '../i18n/ui';
 
 interface Props {
@@ -33,12 +35,14 @@ const { t } = Astro.props;
       </div>
       <div class="about-visual">
         <div class="avatar-container">
-          <img
-            src="/avatar.PNG"
+          <Image
+            src={avatar}
             alt="Daniel Malpica"
             class="avatar-photo"
-            width="200"
-            height="200"
+            width={200}
+            height={200}
+            densities={[1, 2]}
+            loading="lazy"
           />
           <div class="avatar-ring"></div>
           <div class="avatar-glow"></div>
