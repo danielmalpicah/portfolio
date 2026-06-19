@@ -48,14 +48,45 @@ export const ui = {
         {
           title: 'Sitios Web Estáticos',
           description: 'Páginas web rápidas, modernas y optimizadas para Google. Perfectas para negocios locales, landing pages y portafolios.',
+          price: 'Desde $3,500 MXN',
         },
         {
           title: 'Automatizaciones',
           description: 'Flujos de trabajo automáticos con n8n. Elimina tareas repetitivas y conecta tus herramientas digitales sin esfuerzo.',
+          price: 'Desde $4,500 MXN',
         },
         {
           title: 'Mantenimiento Web',
           description: 'Actualizaciones, correcciones y soporte continuo para que tu sitio siempre funcione perfecto y seguro.',
+          price: 'Desde $900 MXN/mes',
+        },
+      ],
+    },
+    process: {
+      label: 'Proceso',
+      heading: 'Cómo',
+      heading_accent: 'trabajo',
+      subtitle: 'Un proceso claro, sin sorpresas ni costos ocultos.',
+      steps: [
+        {
+          number: '01',
+          title: 'Descubrimiento',
+          description: 'Hablamos sobre tu negocio y objetivos. Entiendo qué necesitas antes de escribir una línea de código.',
+        },
+        {
+          number: '02',
+          title: 'Propuesta',
+          description: 'Propuesta clara con alcance, precio y tiempos de entrega. Sin letra chica.',
+        },
+        {
+          number: '03',
+          title: 'Desarrollo',
+          description: 'Construyo con herramientas modernas e IA. Actualizaciones constantes para que veas el avance.',
+        },
+        {
+          number: '04',
+          title: 'Entrega',
+          description: 'Sitio en producción. Te entrego accesos y una guía rápida para que tengas el control total.',
         },
       ],
     },
@@ -136,6 +167,34 @@ export const ui = {
       heading: 'Tools I',
       heading_accent: 'work with',
       subtitle: "Technologies I'm learning and applying to build real projects.",
+    },
+    process: {
+      label: 'Process',
+      heading: 'How I',
+      heading_accent: 'work',
+      subtitle: 'A clear process, no surprises.',
+      steps: [
+        {
+          number: '01',
+          title: 'Discovery',
+          description: 'We talk about your business and goals. I understand what you need before writing a single line of code.',
+        },
+        {
+          number: '02',
+          title: 'Proposal',
+          description: 'Clear proposal with scope, price, and delivery timeline. No hidden fees.',
+        },
+        {
+          number: '03',
+          title: 'Development',
+          description: 'I build with modern tools and AI. Constant updates so you see the progress.',
+        },
+        {
+          number: '04',
+          title: 'Delivery',
+          description: "Site goes live. I hand over access and walk you through everything so you're in full control.",
+        },
+      ],
     },
     projects: {
       label: 'Work',

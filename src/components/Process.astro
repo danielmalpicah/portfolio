@@ -1,0 +1,114 @@
+---
+import type { ui } from '../i18n/ui';
+
+interface Props {
+  t: typeof ui['es']['process'];
+}
+
+const { t } = Astro.props;
+---
+
+<section id="process" class="process">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">{t.label}</span>
+      <h2>{t.heading} <span class="gradient-text">{t.heading_accent}</span></h2>
+      <p>{t.subtitle}</p>
+    </div>
+    <div class="steps">
+      {t.steps.map((step) => (
+        <div class="step">
+          <div class="step-number">{step.number}</div>
+          <div class="step-content">
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process {
+    padding: 8rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  /* Connecting line between steps on desktop */
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 2.25rem;
+    left: calc(12.5% + 1.5rem);
+    right: calc(12.5% + 1.5rem);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-accent), var(--border-accent), transparent);
+    pointer-events: none;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .step:hover {
+    border-color: rgba(124, 58, 237, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .step-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .step-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.625rem;
+    color: var(--text-primary);
+  }
+
+  .step-content p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps::before {
+      display: none;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

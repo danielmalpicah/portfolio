@@ -27,6 +27,9 @@ const icons = [
           <div class="service-icon" set:html={icons[i]}></div>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
+          <div class="service-price">
+            <span>{item.price}</span>
+          </div>
         </div>
       ))}
     </div>
@@ -53,6 +56,8 @@ const icons = [
     transition: all 0.3s;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   .service-card::before {
@@ -101,6 +106,20 @@ const icons = [
     color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.7;
+    flex: 1;
+  }
+
+  .service-price {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .service-price span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    letter-spacing: -0.01em;
   }
 
   @media (max-width: 768px) {
