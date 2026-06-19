@@ -14,5 +14,9 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^6.3.3"
+  },
+  "devDependencies": {
+    "@resvg/resvg-wasm": "^2.6.2",
+    "satori": "^0.26.0"
   }
 }
